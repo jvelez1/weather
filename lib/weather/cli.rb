@@ -23,14 +23,18 @@ module Weather
     desc '-av_max city', 'will display the average max temperature for this week'
     def av_max(city)
       display_info(city) do |city_info|
-        puts "Maximum Average for this week: #{city_info.data.dig(:maximum, :today)}°"
+        puts "
+          Maximum Average for this week: #{city_info.data.dig(:maximum, :today)}°
+        "
       end
     end
 
     desc '-av_min city', 'will display the average min temperature for this week'
     def av_min(city)
       display_info(city) do |city_info|
-        puts "Minimum Average for this week: #{city_info.data.dig(:minimum, :today)}°"
+        puts "
+          Minimum Average for this week: #{city_info.data.dig(:minimum, :today)}°
+        "
       end
     end
 
