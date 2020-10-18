@@ -45,7 +45,7 @@ module Weather
       data = yield
       {
         today: data[0]['value'],
-        average: data.sum { |day| day['value'].to_i } / 7
+        week_average: data.sum { |day| day['value'].to_i } / 7
       }
     end
   end

@@ -3,11 +3,11 @@ require_relative 'lib/weather/version'
 Gem::Specification.new do |spec|
   spec.name          = "weather"
   spec.version       = Weather::VERSION
-  spec.authors       = ["josue"]
+  spec.authors       = ["Josue Velez"]
   spec.email         = ["josuevelezdr@gmail.com"]
 
-  spec.summary       = "Holi"
-  spec.description   = "holi"
+  spec.summary       = "Ruby CLI"
+  spec.description   = "A Basic ruby CLI to get Weather for Barcelona cities"
   spec.homepage      = "https://github.com/jvelez1"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")

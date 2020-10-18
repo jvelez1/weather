@@ -3,16 +3,16 @@ require 'weather/city_dto'
 require 'ostruct'
 
 module Weather
-  class CityInfo
+  class City
     def initialize(city)
       @request = Weather::Request.new(city)
     end
 
     def call
-      if request.call && request.body.ok?
-        result(valid?: true, data: CityDTO.call(request.body))
+      if request.call
+        result(valid?: true, data: CityDTO.call(request.response))
       else
-        result(valid: false, error: request.error)
+        result(valid?: false, error: request.error)
       end
     end
 
