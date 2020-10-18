@@ -1,16 +1,12 @@
 # Weather
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/weather`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to Weather CLI! 
 
-TODO: Delete this and the text above, and describe your gem
+This is a small ruby CLI, which is going to help you to know the temperature for some Barcelona city. 
+
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'weather'
-```
+You should have installed ruby 2.6.5
 
 And then execute:
 
@@ -22,7 +18,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run: `bin/eltiempo` to know all available commands. 
+
+```ruby
+Commands:
+  eltiempo -av_max city    # will display the average max temperature for this week
+  eltiempo -av_min city    # will display the average min temperature for this week
+  eltiempo -today city     # will display the min and max temperature for today
+  eltiempo help [COMMAND]  # Describe available commands or one specific command
+```
+
+EX:
+
+```ruby
+bin/eltiempo -today 'barcelona'
+
+=> "For Today Domingo: Minimum: 9° | Maximum: 18°"
+```
+
+## TODO
+- Get finished the Tests
+- Adding a command to get all available cities
+- Improve the `suggestion` method.
+- Add a CACHE mechanism.
+
 
 ## Development
 
@@ -32,7 +51,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/weather.
+Bug reports and pull requests are welcome on GitHub at https://github.com/jvelez1/weather.
 
 
 ## License
