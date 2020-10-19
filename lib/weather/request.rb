@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'httparty'
+require 'byebug'
 
 module Weather
   class Request
@@ -51,12 +52,8 @@ module Weather
 
     def suggestions
       city_values = city.split(" ")
-      parsed_all_cities.map do |data|
-        city_name = data.dig('name', '__content__').downcase
-        next unless city_values.map { |a| city_name.include?(a) }.inject(&:|)
-
-        city_name
-      end.compact
+      parsed_all_cities.map { |parsed_city| parsed_city.dig('name', '__content__').downcase }
+                       .select { |city_name| (city_name.split(" ") & city_values).any? }
     end
 
     def request_all_cities
